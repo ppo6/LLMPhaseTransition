@@ -1,18 +1,24 @@
 # LLM Phase Transition
 
-Exploring how language model reliability degrades as context becomes noisier — borrowing phase-transition framing from physics to describe the collapse.
+Mapping where language model reliability collapses as context gets noisier — borrowing phase-transition framing from physics to describe the breakdown.
 
-## What's here
+![phase diagram](assets/phase_diagram.png)
 
-**01_entropy_probe** — does first-token Shannon entropy increase when the model receives context that contradicts its parametric knowledge? Testing entropy as a cheap real-time signal for distractor pressure.
+The heatmap shows accuracy as a function of distractor density × gold passage position. The curves on the right are sigmoidal — there's a sharp transition point, not a gradual linear degradation. Middle placement degrades fastest, consistent with the Lost-in-the-Middle effect.
 
-Main finding: poisoned context doesn't make the model uncertain — it makes it confidently wrong. Entropy drops, not spikes.
+## Notebooks
+
+**01 — Entropy Probe**
+Does first-token Shannon entropy increase when the model receives contradicting context? Main finding: poisoned context doesn't make the model uncertain — it makes it confidently wrong. Entropy drops, not spikes.
+
+**02 — Attention & Position**
+Mechanistic verification of the position effect using GPT-2 attention weights. Tracks how much attention the model pays to the gold passage depending on where it sits in the context window.
 
 ## Stack
 
-- `transformers` (Qwen2-0.5B-Instruct)
-- `torch`, `pandas`, `matplotlib`
+- `transformers`, `transformer_lens`
+- `torch`, `pandas`, `matplotlib`, `scipy`
 
 ## Status
 
-Work in progress. Adding attention analysis and full phase diagram sweep next.
+Active. Phase diagram sweep and steering vector mitigation coming next.
