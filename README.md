@@ -18,7 +18,7 @@ Mechanistic verification of the position effect using GPT-2 attention weights. T
 ReAct agent tested across three conditions: clean wiki, wrong-fact injection, and adversarial prompt injection. Key finding: wrong facts map to the distractor density axis (high-salience noise), while injections map to the adversarial intent axis — the attacker shifts not just whether an error occurs, but which error.
 
 **04 — Evaluation Pipeline**
-Async multi-model eval harness with response caching, baseline run on clean factual QA. Key finding: scorer choice (exact vs substring vs normalised) shifts reported accuracy by several points — the measurement problem has to be solved before the distractor experiments mean anything.
+Async multi-model eval harness with response caching, baseline run on clean factual QA. Key finding: metric choice massively affects reported accuracy — F1 + substring is the right combination for the phase diagram experiments.
 
 ## Stack
 
