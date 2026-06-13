@@ -1,0 +1,21 @@
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Env
+.env
+.env.*
+
+# Cache
+.cache/
+*.json.bak
+
+# OS
+.DS_Store
