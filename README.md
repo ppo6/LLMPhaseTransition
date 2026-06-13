@@ -20,6 +20,9 @@ ReAct agent tested across three conditions: clean wiki, wrong-fact injection, an
 **04 — Evaluation Pipeline**
 Async multi-model eval harness with response caching, baseline run on clean factual QA. Key finding: metric choice massively affects reported accuracy — F1 + substring is the right combination for the phase diagram experiments.
 
+**05 — Phase Diagram**
+Sweeps distractor density × gold-passage position on fictional entities to force passage-reading. Key finding: accuracy collapse is sharp and logistic — n* drops as the gold passage moves toward the end, with start position the most robust due to primacy bias.
+
 ## Stack
 
 - `transformers`, `transformer_lens`
