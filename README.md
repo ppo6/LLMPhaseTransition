@@ -23,6 +23,9 @@ Async multi-model eval harness with response caching, baseline run on clean fact
 **05 — Phase Diagram**
 Sweeps distractor density × gold-passage position on fictional entities to force passage-reading. Key finding: accuracy collapse is sharp and logistic — n* drops as the gold passage moves toward the end, with start position the most robust due to primacy bias.
 
+**06 — Steering Vectors**
+Tests whether a memory-vs-context steering vector can shift n* upward, expanding the safe operating region. Key finding: the circuit is not linearly steerable at the residual stream — accuracy is flat across all α values at every layer. Attention ablation experiments show the distractor signal enters via specific heads, not the residual stream directly.
+
 ## Stack
 
 - `transformers`, `transformer_lens`
@@ -30,4 +33,4 @@ Sweeps distractor density × gold-passage position on fictional entities to forc
 
 ## Status
 
-Active. Phase diagram sweep and steering vector mitigation coming next.
+Active. SAE feature analysis coming next.
